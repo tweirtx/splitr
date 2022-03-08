@@ -5,7 +5,6 @@ use std::fs::File;
 use std::io::Read;
 use serde_json;
 use std::process;
-use std::process::exit;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
@@ -25,17 +24,14 @@ struct Job {
 fn main() {
     let args: Vec<String> = env::args().collect();
     if !args.last().unwrap().ends_with(".json") {
-        println!("Please specify an input file!");
-        exit(1);
+        panic!("Please specify an input file!");
     }
     let file = File::open(&args.last().unwrap());
     let mut contents = String::new();
     file.unwrap().read_to_string(&mut contents);
     let input: Job = serde_json::from_str(&contents).unwrap();
-    //let output_args = input;
     let output_args = input.output_args;
-    let clips = &input.clips;
-    for clip in clips {
+    for clip in &input.clips {
         let input_file = &clip.input_filename;
         let output_file = &clip.output_filename;
         let start_time = &clip.start_timestamp;
