@@ -1,0 +1,17 @@
+{
+  "output_args": "-c:v libvpx-vp9 -c:a libopus -b:v 680k -crf 33 -cpu-used 2 -b:a 64k",
+  "clips": [
+    {
+      "input_filename": "ftc2122-FIM-MSCLM7_1223974585.mp4",
+      "output_filename": "2122-FIM-MSCLM7-Q001.webm",
+      "start_timestamp": 15,
+      "end_timestamp": 190
+    },
+    {
+      "input_filename": "ftc2122-FIM-MSCLM7_1223974585.mp4",
+      "output_filename": "2122-FIM-MSCLM7-Q002.webm",
+      "start_timestamp": 280,
+      "end_timestamp": 510
+    }
+  ]
+}
