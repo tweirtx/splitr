@@ -36,7 +36,7 @@ fn main() {
         let output_file = &clip.output_filename;
         let start_time = &clip.start_timestamp;
         let end_time = &clip.end_timestamp;
-        let command = format!("-loglevel quiet -i {input_file} -ss {start_time} -to {end_time} {output_args} {output_file}");
+        let command = format!("-hwaccel vaapi -hwaccel_output_format vaapi -i {input_file} -ss {start_time} -to {end_time} {output_args} {output_file}");
         println!("ffmpeg {}", command);
         let output =process::Command::new("ffmpeg").args(command.split(" ")).spawn();
         println!("{}", output.unwrap().wait().unwrap())

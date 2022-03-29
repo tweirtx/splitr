@@ -1,5 +1,5 @@
 {
-  "output_args": "-c:v libvpx-vp9 -c:a libopus -b:v 680k -crf 33 -cpu-used 2 -b:a 64k -y",
+  "output_args": "-c:v vp9_vaapi -c:a libopus -b:v 680k -crf 33 -cpu-used 2 -b:a 64k -y",
   "clips": [
     {
       "input_filename": "ftc2122-FIM-MSCLM7_1223974585.mp4",
